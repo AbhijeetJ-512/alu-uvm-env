@@ -16,37 +16,33 @@ module alu #(
     localparam OP_OR  = 3'b011;
     localparam OP_XOR = 3'b100;
 
-    // Register the inputs on clock edges
-    reg [2:0]         opcode_r;
-    reg [WIDTH-1:0]   num1_r;
-    reg [WIDTH-1:0]   num2_r;
+    wire subtract = (opcode == OP_SUB);
+    wire [WIDTH-1:0] operand2  = num2 ^ {WIDTH{subtract}};
+    wire [WIDTH:0]   adder_out = {1'b0, num1} + {1'b0, operand2} + subtract;
 
-    wire subtract = (opcode_r == OP_SUB);
-    wire [WIDTH-1:0] operand2  = num2_r ^ {WIDTH{subtract}};
-    wire [WIDTH:0]   adder_out = {1'b0, num1_r} + {1'b0, operand2} + subtract;
+    reg [WIDTH-1:0] result_comb;
+    reg             carry_comb;
 
     always @(*) begin
-        case (opcode_r)
+        case (opcode)
             OP_ADD, OP_SUB: begin
-                result = adder_out[WIDTH-1:0];
-                carry_out = adder_out[WIDTH];
+                result_comb = adder_out[WIDTH-1:0];
+                carry_comb  = adder_out[WIDTH];
             end
-            OP_AND:  begin result = num1_r & num2_r; carry_out = 1'b0; end
-            OP_OR :  begin result = num1_r | num2_r; carry_out = 1'b0; end
-            OP_XOR:  begin result = num1_r ^ num2_r; carry_out = 1'b0; end
-            default: begin result = {WIDTH{1'b0}}; carry_out = 1'b0; end
+            OP_AND:  begin result_comb = num1 & num2; carry_comb = 1'b0; end
+            OP_OR :  begin result_comb = num1 | num2; carry_comb = 1'b0; end
+            OP_XOR:  begin result_comb = num1 ^ num2; carry_comb = 1'b0; end
+            default: begin result_comb = {WIDTH{1'b0}}; carry_comb = 1'b0; end
         endcase
     end
 
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
-            opcode_r <= 3'b0;
-            num1_r   <= {WIDTH{1'b0}};
-            num2_r   <= {WIDTH{1'b0}};
+            result    <= {WIDTH{1'b0}};
+            carry_out <= 1'b0;
         end else begin
-            opcode_r <= opcode;
-            num1_r   <= num1;
-            num2_r   <= num2;
+            result    <= result_comb;
+            carry_out <= carry_comb;
         end
     end
 
