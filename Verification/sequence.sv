@@ -116,10 +116,25 @@ class random_seq extends uvm_sequence#(transaction);
         if (!uvm_config_db#(coverage)::get(null, "", "cov_h", cov_h))
             `uvm_warning("RANDOM_SEQ", "coverage handle not found; falling back to a fixed 500-item run")
 
+        // Each operand is skewed to ~25% per coverage value class (the dist
+        // ranges below are exactly coverage.sv's zero/max/low/high bins):
+        // `:=` weights the single value, `:/` spreads the same total weight
+        // across a whole range. Plain uniform randomize() would almost never
+        // hit the zero/max singletons at WIDTH>8, so op_x_operands (and the
+        // cov_pct >= 100.0 exit below) could never realistically close.
         forever begin
             tr = transaction::type_id::create("tr");
             start_item(tr);
-            if (!tr.randomize())
+            if (!tr.randomize() with {
+                  num1 dist { 0                                                        := 1,
+                              {alu_pkg::WIDTH{1'b1}}                                   := 1,
+                              [1 : (1 << (alu_pkg::WIDTH-1)) - 1]                      :/ 1,
+                              [(1 << (alu_pkg::WIDTH-1)) : {alu_pkg::WIDTH{1'b1}} - 1] :/ 1 };
+                  num2 dist { 0                                                        := 1,
+                              {alu_pkg::WIDTH{1'b1}}                                   := 1,
+                              [1 : (1 << (alu_pkg::WIDTH-1)) - 1]                      :/ 1,
+                              [(1 << (alu_pkg::WIDTH-1)) : {alu_pkg::WIDTH{1'b1}} - 1] :/ 1 };
+                })
                 `uvm_error("RANDOM_SEQ", "randomize failed")
             finish_item(tr);
             count = count + 1;

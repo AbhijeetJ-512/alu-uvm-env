@@ -42,6 +42,13 @@ class monitor extends uvm_monitor;
                     tr.opcode    = prev_opcode;
                     tr.num1      = prev_num1;
                     tr.num2      = prev_num2;
+                    // tr.result/carry_out are 2-state: copying X/Z would
+                    // silently become 0 (== the reserved-opcode expected
+                    // value), so flag it here before it is lost.
+                    if ($isunknown({vif.result, vif.carry_out}))
+                        `uvm_error("MONITOR",
+                            $sformatf("DUT output is X/Z while out of reset: result=%b carry_out=%b",
+                                      vif.result, vif.carry_out))
                     tr.result    = vif.result;
                     tr.carry_out = vif.carry_out;
                     ap.write(tr);
