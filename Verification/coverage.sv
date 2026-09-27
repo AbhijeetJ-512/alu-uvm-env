@@ -31,13 +31,16 @@ class coverage extends uvm_subscriber #(transaction);
 
         carry_cp: coverpoint tr.carry_out;
 
+        // `intersect {}` takes opcode *values* (IEEE 1800 19.6.1), not bin
+        // names: [5:7] selects the reserved[] bins, and
+        // [ALU_AND:ALU_XOR] (= [2:4]) selects the b_and/b_or/b_xor bins.
         op_x_operands: cross op_cp, num1_cp, num2_cp {
-            ignore_bins reserved_ops = binsof(op_cp) intersect {reserved};
+            ignore_bins reserved_ops = binsof(op_cp) intersect {[5:7]};
         }
 
         op_x_carry: cross op_cp, carry_cp {
             ignore_bins logical_ops_and_reserved =
-                binsof(op_cp) intersect {b_and, b_or, b_xor, reserved};
+                binsof(op_cp) intersect {[alu_pkg::ALU_AND:alu_pkg::ALU_XOR], [5:7]};
         }
     endgroup
 

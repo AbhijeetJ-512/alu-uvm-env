@@ -1,15 +1,15 @@
 class transaction extends uvm_sequence_item;
-    import alu_pkg::*;
     `uvm_object_utils(transaction)
 
-    rand bit [2:0]         opcode;
-    rand bit [WIDTH-1:0]   num1;
-    rand bit [WIDTH-1:0]   num2;
-    bit [WIDTH-1:0]        result;
-    bit                    carry_out;
+    rand bit [2:0]                  opcode;
+    rand bit [alu_pkg::WIDTH-1:0]   num1;
+    rand bit [alu_pkg::WIDTH-1:0]   num2;
+    bit [alu_pkg::WIDTH-1:0]        result;
+    bit                             carry_out;
 
     constraint legal_opcode {
-        opcode inside {ALU_ADD, ALU_SUB, ALU_AND, ALU_OR, ALU_XOR};
+        opcode inside {alu_pkg::ALU_ADD, alu_pkg::ALU_SUB, alu_pkg::ALU_AND,
+                       alu_pkg::ALU_OR,  alu_pkg::ALU_XOR};
     }
 
     function new(string name = "transaction");
