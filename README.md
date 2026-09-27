@@ -43,5 +43,6 @@ This environment was written and reviewed without execution — see
 why (no UVM-capable simulator was available in the environment this was
 built in). It targets standard UVM 1.2 and needs a SystemVerilog
 simulator with a UVM library (Questa, VCS, Xcelium, or a UVM-capable
-Verilator build) — point it at `Verification/testbench.sv` as the
-top-level module (`alu_tb_top`).
+Verilator build) — compile `Design/alu.v` alongside `Verification/testbench.sv`
+(the DUT module isn't pulled in by `` `include ``) and point the simulator at
+`Verification/testbench.sv` as the top-level module (`alu_tb_top`).
