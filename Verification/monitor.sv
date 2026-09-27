@@ -21,28 +21,36 @@ class monitor extends uvm_monitor;
     endfunction
 
     // Pairs each result with the instruction driven one cycle earlier
-    // (Review Focus #3): have_prev is only set after the first edge this
-    // task processes, so the very first result sampled — which has no
-    // corresponding driven instruction yet — never becomes a transaction.
+    // (Review Focus #3): have_prev is only set after the first post-reset
+    // edge this task processes, so the very first result sampled — which
+    // has no corresponding driven instruction yet — never becomes a
+    // transaction. have_prev is also cleared whenever vif.rst_n is low, so
+    // pairing is gated on reset by construction rather than relying on
+    // 2-state 'bit' fields happening to truncate an undriven bus to 0
+    // (which would coincidentally match alu.v's reset value).
     task run_phase(uvm_phase phase);
         transaction tr;
         have_prev = 1'b0;
 
         forever begin
             @(posedge vif.clk);
-            if (have_prev) begin
-                tr = transaction::type_id::create("tr");
-                tr.opcode    = prev_opcode;
-                tr.num1      = prev_num1;
-                tr.num2      = prev_num2;
-                tr.result    = vif.result;
-                tr.carry_out = vif.carry_out;
-                ap.write(tr);
+            if (!vif.rst_n) begin
+                have_prev = 1'b0;
+            end else begin
+                if (have_prev) begin
+                    tr = transaction::type_id::create("tr");
+                    tr.opcode    = prev_opcode;
+                    tr.num1      = prev_num1;
+                    tr.num2      = prev_num2;
+                    tr.result    = vif.result;
+                    tr.carry_out = vif.carry_out;
+                    ap.write(tr);
+                end
+                prev_opcode = vif.opcode;
+                prev_num1   = vif.num1;
+                prev_num2   = vif.num2;
+                have_prev   = 1'b1;
             end
-            prev_opcode = vif.opcode;
-            prev_num1   = vif.num1;
-            prev_num2   = vif.num2;
-            have_prev   = 1'b1;
         end
     endtask
 endclass
