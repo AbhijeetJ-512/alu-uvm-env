@@ -31,11 +31,13 @@ class coverage extends uvm_subscriber #(transaction);
 
         carry_cp: coverpoint tr.carry_out;
 
-        op_x_operands: cross op_cp, num1_cp, num2_cp;
+        op_x_operands: cross op_cp, num1_cp, num2_cp {
+            ignore_bins reserved_ops = binsof(op_cp) intersect {reserved};
+        }
 
         op_x_carry: cross op_cp, carry_cp {
-            ignore_bins logical_ops =
-                binsof(op_cp) intersect {b_and, b_or, b_xor};
+            ignore_bins logical_ops_and_reserved =
+                binsof(op_cp) intersect {b_and, b_or, b_xor, reserved};
         }
     endgroup
 
