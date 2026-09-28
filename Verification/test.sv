@@ -24,16 +24,23 @@ class test extends uvm_test;
 
         phase.raise_objection(this);
 
+        `uvm_info("TEST", $sformatf("=== starting, WIDTH=%0d ===", alu_pkg::WIDTH), UVM_LOW)
+
+        `uvm_info("TEST", "phase 1/2: corner_case_seq", UVM_LOW)
         corner = corner_case_seq::type_id::create("corner");
         corner.start(e.a.seqr);
 
         if (alu_pkg::WIDTH <= 8) begin
+            `uvm_info("TEST", "phase 2/2: exhaustive_seq (WIDTH<=8)", UVM_LOW)
             exh = exhaustive_seq::type_id::create("exh");
             exh.start(e.a.seqr);
         end else begin
+            `uvm_info("TEST", "phase 2/2: random_seq (WIDTH>8)", UVM_LOW)
             rnd = random_seq::type_id::create("rnd");
             rnd.start(e.a.seqr);
         end
+
+        `uvm_info("TEST", "all sequences complete, draining pipeline before checking", UVM_LOW)
 
         // Drain the pipeline before checking. The last instruction is driven
         // on the posedge the final sequence returns on; the DUT registers its
@@ -63,6 +70,7 @@ class test extends uvm_test;
         if (cov_pct < 95.0)
             `uvm_warning("TEST", $sformatf("functional coverage %0.2f%% is below the 95%% goal", cov_pct))
 
+        `uvm_info("TEST", "=== done ===", UVM_LOW)
         phase.drop_objection(this);
     endtask
 endclass

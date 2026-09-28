@@ -8,8 +8,11 @@ typedef class coverage;
 class corner_case_seq extends uvm_sequence#(transaction);
     `uvm_object_utils(corner_case_seq)
 
+    int unsigned count;
+
     function new(string name = "corner_case_seq");
         super.new(name);
+        count = 0;
     endfunction
 
     task send(bit [2:0] opcode, bit [alu_pkg::WIDTH-1:0] num1, bit [alu_pkg::WIDTH-1:0] num2);
@@ -20,12 +23,18 @@ class corner_case_seq extends uvm_sequence#(transaction);
         tr.num1   = num1;
         tr.num2   = num2;
         finish_item(tr);
+        count = count + 1;
+        `uvm_info("CORNER_SEQ",
+                  $sformatf("item %0d: opcode=%0d num1=%0d num2=%0d", count, opcode, num1, num2),
+                  UVM_HIGH)
     endtask
 
     virtual task body();
         bit [2:0] ops[5];
         bit [alu_pkg::WIDTH-1:0] zero, max, low, high;
         int i;
+
+        `uvm_info("CORNER_SEQ", "starting: directed corner-case + reserved-opcode tests", UVM_LOW)
 
         ops[0] = alu_pkg::ALU_ADD;
         ops[1] = alu_pkg::ALU_SUB;
@@ -51,6 +60,8 @@ class corner_case_seq extends uvm_sequence#(transaction);
         send(3'b101, zero, zero);
         send(3'b110, zero, zero);
         send(3'b111, zero, zero);
+
+        `uvm_info("CORNER_SEQ", $sformatf("complete: %0d items sent", count), UVM_LOW)
     endtask
 endclass
 
@@ -70,6 +81,9 @@ class exhaustive_seq extends uvm_sequence#(transaction);
         int unsigned      a, b;
         int unsigned      max_val;
         transaction       tr;
+        int unsigned      count;
+        int unsigned      total;
+        int unsigned      next_heartbeat;
 
         ops[0] = alu_pkg::ALU_ADD;
         ops[1] = alu_pkg::ALU_SUB;
@@ -78,6 +92,16 @@ class exhaustive_seq extends uvm_sequence#(transaction);
         ops[4] = alu_pkg::ALU_XOR;
 
         max_val = (1 << alu_pkg::WIDTH) - 1;
+        count   = 0;
+        total   = 5 * (max_val + 1) * (max_val + 1);
+        // Heartbeat every ~10% of the sweep so a long run doesn't look stalled.
+        next_heartbeat = total / 10;
+        if (next_heartbeat == 0) next_heartbeat = 1;
+
+        `uvm_info("EXHAUSTIVE_SEQ",
+                  $sformatf("starting: full sweep, WIDTH=%0d, %0d items total",
+                             alu_pkg::WIDTH, total),
+                  UVM_LOW)
 
         for (i = 0; i < 5; i = i + 1) begin
             for (a = 0; a <= max_val; a = a + 1) begin
@@ -88,9 +112,19 @@ class exhaustive_seq extends uvm_sequence#(transaction);
                     tr.num1   = a[alu_pkg::WIDTH-1:0];
                     tr.num2   = b[alu_pkg::WIDTH-1:0];
                     finish_item(tr);
+                    count = count + 1;
+                    if (count >= next_heartbeat) begin
+                        `uvm_info("EXHAUSTIVE_SEQ",
+                                  $sformatf("progress: %0d/%0d (%0d%%)",
+                                             count, total, (count*100)/total),
+                                  UVM_LOW)
+                        next_heartbeat = next_heartbeat + (total / 10);
+                    end
                 end
             end
         end
+
+        `uvm_info("EXHAUSTIVE_SEQ", $sformatf("complete: %0d items sent", count), UVM_LOW)
     endtask
 endclass
 
@@ -115,6 +149,11 @@ class random_seq extends uvm_sequence#(transaction);
 
         if (!uvm_config_db#(coverage)::get(null, "", "cov_h", cov_h))
             `uvm_warning("RANDOM_SEQ", "coverage handle not found; falling back to a fixed 500-item run")
+
+        `uvm_info("RANDOM_SEQ",
+                  $sformatf("starting: coverage-driven random, WIDTH=%0d, cap=%0d items",
+                             alu_pkg::WIDTH, max_transactions),
+                  UVM_LOW)
 
         // Each operand is skewed to ~25% per coverage value class (the dist
         // ranges below are exactly coverage.sv's zero/max/low/high bins):
@@ -141,6 +180,11 @@ class random_seq extends uvm_sequence#(transaction);
 
             if (cov_h != null)
                 cov_pct = cov_h.cg.get_coverage();
+
+            if (count % 1000 == 0)
+                `uvm_info("RANDOM_SEQ",
+                          $sformatf("progress: %0d items sent, coverage=%0.2f%%", count, cov_pct),
+                          UVM_LOW)
 
             if (cov_h != null && cov_pct >= 100.0)
                 break;
