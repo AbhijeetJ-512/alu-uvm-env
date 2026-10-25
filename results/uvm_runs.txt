@@ -1,0 +1,9 @@
+run             W sequence                   txns     pass  fail  UVM_ERROR  UVM_FATAL  wall [s]
+------------------------------------------------------------------------------------------------
+w8              8 exhaustive_seq           327705   327705     0          0          0    21.775
+w16_original   16 random_seq (original)     20025    20025     0      20000          0     2.001
+w16            16 random_seq_vl             20025    20025     0          0          0     0.998
+
+simulator: Verilator 5.052 2026-09-05, one thread, seed 1; 'txns' = scoreboard Total (corner_case_seq 25 + main sequence).
+note: the 'w16_original' run drives the unmodified random_seq; every one of its 20,000 randomize() calls fails on this simulator (UVM_ERROR),
+      which is why the run is reported but not counted as a verification result (see section G.4).
