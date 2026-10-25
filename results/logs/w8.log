@@ -1,0 +1,44 @@
+UVM_INFO @ 0: reporter [RNTST] Running test test...
+UVM_INFO /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w8/Verification/test.sv(27) @ 0: uvm_test_top [TEST] === starting, WIDTH=8 ===
+UVM_INFO /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w8/Verification/test.sv(29) @ 0: uvm_test_top [TEST] phase 1/2: corner_case_seq
+UVM_INFO /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w8/Verification/sequence.sv(37) @ 0: uvm_test_top.e.a.seqr@@corner [CORNER_SEQ] starting: directed corner-case + reserved-opcode tests
+UVM_INFO /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w8/Verification/sequence.sv(64) @ 490000: uvm_test_top.e.a.seqr@@corner [CORNER_SEQ] complete: 25 items sent
+UVM_INFO /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w8/Verification/test.sv(34) @ 490000: uvm_test_top [TEST] phase 2/2: exhaustive_seq (WIDTH<=8)
+UVM_INFO /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w8/Verification/sequence.sv(104) @ 490000: uvm_test_top.e.a.seqr@@exh [EXHAUSTIVE_SEQ] starting: full sweep, WIDTH=8, 327680 items total
+UVM_INFO /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w8/Verification/sequence.sv(120) @ 655850000: uvm_test_top.e.a.seqr@@exh [EXHAUSTIVE_SEQ] progress: 32768/327680 (10%)
+UVM_INFO /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w8/Verification/sequence.sv(120) @ 1311210000: uvm_test_top.e.a.seqr@@exh [EXHAUSTIVE_SEQ] progress: 65536/327680 (20%)
+UVM_INFO /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w8/Verification/sequence.sv(120) @ 1966570000: uvm_test_top.e.a.seqr@@exh [EXHAUSTIVE_SEQ] progress: 98304/327680 (30%)
+UVM_INFO /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w8/Verification/sequence.sv(120) @ 2621930000: uvm_test_top.e.a.seqr@@exh [EXHAUSTIVE_SEQ] progress: 131072/327680 (40%)
+UVM_INFO /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w8/Verification/sequence.sv(120) @ 3277290000: uvm_test_top.e.a.seqr@@exh [EXHAUSTIVE_SEQ] progress: 163840/327680 (50%)
+UVM_INFO /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w8/Verification/sequence.sv(120) @ 3932650000: uvm_test_top.e.a.seqr@@exh [EXHAUSTIVE_SEQ] progress: 196608/327680 (60%)
+UVM_INFO /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w8/Verification/sequence.sv(120) @ 4588010000: uvm_test_top.e.a.seqr@@exh [EXHAUSTIVE_SEQ] progress: 229376/327680 (70%)
+UVM_INFO /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w8/Verification/sequence.sv(120) @ 5243370000: uvm_test_top.e.a.seqr@@exh [EXHAUSTIVE_SEQ] progress: 262144/327680 (80%)
+UVM_INFO /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w8/Verification/sequence.sv(120) @ 5898730000: uvm_test_top.e.a.seqr@@exh [EXHAUSTIVE_SEQ] progress: 294912/327680 (90%)
+UVM_INFO /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w8/Verification/sequence.sv(120) @ 6554090000: uvm_test_top.e.a.seqr@@exh [EXHAUSTIVE_SEQ] progress: 327680/327680 (100%)
+UVM_INFO /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w8/Verification/sequence.sv(127) @ 6554090000: uvm_test_top.e.a.seqr@@exh [EXHAUSTIVE_SEQ] complete: 327680 items sent
+UVM_INFO /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w8/Verification/test.sv(43) @ 6554090000: uvm_test_top [TEST] all sequences complete, draining pipeline before checking
+UVM_INFO /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w8/Verification/test.sv(64) @ 6554140000: uvm_test_top [TEST] Final coverage=0.00% pass=327705 fail=0
+UVM_WARNING /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w8/Verification/test.sv(71) @ 6554140000: uvm_test_top [TEST] functional coverage 0.00% is below the 95% goal
+UVM_INFO /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w8/Verification/test.sv(73) @ 6554140000: uvm_test_top [TEST] === done ===
+UVM_INFO /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w8/Verification/coverage.sv(58) @ 6554140000: uvm_test_top.e.cov [COVERAGE] Functional coverage = 0.00%
+UVM_INFO /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w8/Verification/scoreboard.sv(53) @ 6554140000: uvm_test_top.e.s [SCOREBOARD] Total=327705 Pass=327705 Fail=0
+UVM_INFO /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/../../_toolchain/uvm-verilator/src/base/uvm_report_server.svh(864) @ 6554140000: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :   23
+UVM_WARNING :    1
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[CORNER_SEQ]     2
+[COVERAGE]     1
+[EXHAUSTIVE_SEQ]    12
+[RNTST]     1
+[SCOREBOARD]     1
+[TEST]     7
+
+- /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/../../_toolchain/uvm-verilator/src/base/uvm_root.svh:585: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.052 2026-09-05
+- Verilator: $finish at 7ms; walltime 21.775 s; speed 301.000 us/s
+- Verilator: cpu 19.683 s on 1 threads; allocated 20 MB

@@ -1,1 +1,6 @@
 .worktrees/
+
+# Simulator builds, mutation runs and the Verilator output of the UVM runs
+build/
+__pycache__/
+*.pyc

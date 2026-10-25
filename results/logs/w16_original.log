@@ -1,0 +1,121 @@
+VlRProcess::open: execvp(z3): No such file or directory
+UVM_INFO @ 0: reporter [RNTST] Running test test...
+UVM_INFO /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/test.sv(27) @ 0: uvm_test_top [TEST] === starting, WIDTH=16 ===
+UVM_INFO /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/test.sv(29) @ 0: uvm_test_top [TEST] phase 1/2: corner_case_seq
+UVM_INFO /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(37) @ 0: uvm_test_top.e.a.seqr@@corner [CORNER_SEQ] starting: directed corner-case + reserved-opcode tests
+UVM_INFO /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(64) @ 490000: uvm_test_top.e.a.seqr@@corner [CORNER_SEQ] complete: 25 items sent
+UVM_INFO /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/test.sv(38) @ 490000: uvm_test_top [TEST] phase 2/2: random_seq (WIDTH>8)
+UVM_INFO /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(156) @ 490000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] starting: coverage-driven random, WIDTH=16, cap=20000 items
+%Warning: Subprocess command `z3 --in' failed: exit status 127
+%Warning: Unable to communicate with SAT solver, please check its installation or specify a different one in VERILATOR_SOLVER environment variable.
+ ... Tried: $ z3 --in
+
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 510000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 530000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 550000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 570000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 590000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 610000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 630000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 650000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 670000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 690000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 710000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 730000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 750000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 770000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 790000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 810000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 830000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 850000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 870000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 890000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 910000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 930000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 950000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 970000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 990000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 1010000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 1030000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 1050000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 1070000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 1090000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 1110000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 1130000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 1150000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 1170000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 1190000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 1210000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 1230000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 1250000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 1270000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 1290000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 1310000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 1330000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 1350000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 1370000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 1390000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 1410000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 1430000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 1450000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+... [19939 lines cut: repeated UVM_ERROR lines] ...
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 399870000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 399890000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 399910000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 399930000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 399950000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 399970000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 399990000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 400010000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 400030000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 400050000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 400070000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 400090000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 400110000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 400130000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 400150000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 400170000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 400190000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 400210000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 400230000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 400250000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 400270000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 400290000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 400310000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 400330000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 400350000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 400370000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 400390000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 400410000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 400430000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 400450000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 400470000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_ERROR /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(177) @ 400490000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] randomize failed
+UVM_INFO /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(187) @ 400490000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] progress: 20000 items sent, coverage=0.00%
+UVM_INFO /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/sequence.sv(199) @ 400490000: uvm_test_top.e.a.seqr@@rnd [RANDOM_SEQ] issued 20000 transactions, coverage=0.00%
+UVM_INFO /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/test.sv(43) @ 400490000: uvm_test_top [TEST] all sequences complete, draining pipeline before checking
+UVM_INFO /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/test.sv(64) @ 400540000: uvm_test_top [TEST] Final coverage=0.00% pass=20025 fail=0
+UVM_WARNING /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/test.sv(71) @ 400540000: uvm_test_top [TEST] functional coverage 0.00% is below the 95% goal
+UVM_INFO /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/test.sv(73) @ 400540000: uvm_test_top [TEST] === done ===
+UVM_INFO /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/coverage.sv(58) @ 400540000: uvm_test_top.e.cov [COVERAGE] Functional coverage = 0.00%
+UVM_INFO /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/build/w16/Verification/scoreboard.sv(53) @ 400540000: uvm_test_top.e.s [SCOREBOARD] Total=20025 Pass=20025 Fail=0
+UVM_INFO /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/../../_toolchain/uvm-verilator/src/base/uvm_report_server.svh(864) @ 400540000: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :   33
+UVM_WARNING :    1
+UVM_ERROR :20000
+UVM_FATAL :    0
+** Report counts by id
+[CORNER_SEQ]     2
+[COVERAGE]     1
+[RANDOM_SEQ] 20022
+[RNTST]     1
+[SCOREBOARD]     1
+[TEST]     7
+
+- /home/abhi/Documents/VLSI/Resume_projects/alu_uvm_env/../../_toolchain/uvm-verilator/src/base/uvm_root.svh:585: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.052 2026-09-05
+- Verilator: $finish at 401us; walltime 2.001 s; speed 200.191 us/s
+- Verilator: cpu 1.814 s on 1 threads; allocated 19 MB
