@@ -128,6 +128,11 @@ monitor doesn't observe reset values, which is why mutants A08 and A14 survive, 
 
 ---
 
+## License
+
+MIT, see [`LICENSE`](LICENSE). The UVM library and `uvm-verilator` aren't in this repository; `scripts/setup_toolchain.sh` fetches them under their own
+licenses ([`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md)).
+
 # Original README (unchanged, as received)
 
 ## Parameterized ALU
