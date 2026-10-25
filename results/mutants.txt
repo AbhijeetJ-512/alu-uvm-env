@@ -1,0 +1,21 @@
+mutants run: 14, killed 10, survived 4
+environment: ORIGINAL sources, unmodified
+survivors are annotated: A07 is an equivalent mutant (OR does not use the adder, so its output cannot change); A08 and A14 change only the
+reset value of a register, which this environment never samples (the monitor discards everything until one clock after reset is released): a gap, not an equivalent;
+A06 (reserved opcodes return num1) survives the original environment because corner_case_seq sends reserved opcodes only with zero operands: a stimulus gap, closed by the extension.
+PROBLEMS: none (every outcome matched its expectation)
+
+A01  KILLED    SUB without the carry-in (a - b computed as a + ~b)            scoreboard fail  65542 of 327705, UVM_ERROR 65543   [expected: killed]
+A02  KILLED    result LSB forced to 0 for ADD/SUB                             scoreboard fail  65542 of 327705, UVM_ERROR 65543   [expected: killed]
+A03  KILLED    ADD/SUB carry taken from the wrong adder bit                   scoreboard fail  98308 of 327705, UVM_ERROR 98309   [expected: killed]
+A04  KILLED    AND implemented as OR                                          scoreboard fail  65282 of 327705, UVM_ERROR 65283   [expected: killed]
+A05  KILLED    XOR implemented as AND                                         scoreboard fail  65538 of 327705, UVM_ERROR 65539   [expected: killed]
+A06  SURVIVED  reserved opcodes return num1 instead of 0                      scoreboard fail      0 of 327705, UVM_ERROR 0   [expected: gap]
+A07  SURVIVED  subtract also asserted for OR (the adder is not used by OR)    scoreboard fail      0 of 327705, UVM_ERROR 0   [expected: equivalent]
+A08  SURVIVED  result register resets to all-ones instead of 0                scoreboard fail      0 of 327705, UVM_ERROR 0   [expected: gap]
+A09  KILLED    carry_out register stuck at 0                                  scoreboard fail  65541 of 327705, UVM_ERROR 65542   [expected: killed]
+A10  KILLED    SUB carry has the wrong sense                                  scoreboard fail  65542 of 327705, UVM_ERROR 65543   [expected: killed]
+A11  KILLED    OR implemented as XOR                                          scoreboard fail  58976 of 327705, UVM_ERROR 58977   [expected: killed]
+A12  KILLED    XOR implemented as OR                                          scoreboard fail  58976 of 327705, UVM_ERROR 58977   [expected: killed]
+A13  KILLED    operand 2 not inverted for SUB                                 scoreboard fail  65542 of 327705, UVM_ERROR 65543   [expected: killed]
+A14  SURVIVED  carry_out register resets to 1                                 scoreboard fail      0 of 327705, UVM_ERROR 0   [expected: gap]
