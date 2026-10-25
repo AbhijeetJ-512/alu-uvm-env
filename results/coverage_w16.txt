@@ -1,0 +1,11 @@
+coverpoint        bins ignored  counted    hit   zero
+carry_cp             2      0        2      2      0
+num1_cp              4      0        4      4      0
+num2_cp              4      0        4      4      0
+op_cp                8      0        8      8      0
+op_x_carry          16     12        4      4      0
+op_x_operands      128     48       80     80      0
+
+raw (Verilator data as is, ignore_bins NOT applied) : 111 / 162 bins hit = 68.52 %
+with the declared ignore_bins removed (60 bins)      : 102 / 102 bins hit = 100.00 %
+counted bins never hit: none
