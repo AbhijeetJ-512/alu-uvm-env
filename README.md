@@ -9,6 +9,23 @@ around a small registered ALU (ADD, SUB, AND, OR, XOR; operand width set at comp
 > everything I added is in `scripts/`, `ext/`, `results/` and `docs/portfolio/`. The working plan I built the environment from isn't kept in this folder. The original README is reproduced, unchanged, at the end
 > of this file.
 
+## Interactive architecture explorer
+
+[![Animated block diagram of the UVM environment: click to open the interactive explorer](docs/diagrams/architecture_explorer_preview.svg)](https://abhijeetj-512.github.io/alu-uvm-env/architecture_explorer.html)
+
+**[Open the interactive explorer](https://abhijeetj-512.github.io/alu-uvm-env/architecture_explorer.html)** (GitHub Pages). The animation above is a
+preview. The page runs a short sequence (the 25-item `corner_case_seq`, a window of `exhaustive_seq`, or the 43-item extension from
+`ext/uvm_ext.sv`) through a cycle model of the driver, the registered ALU, the monitor's pairing of results with operands, the scoreboard's
+reference model and the covergroup. You can inject one of the mutants from `scripts/mutate_alu.py` and watch whether the scoreboard kills it.
+It shows which wires are active, a timeline chart, and an inspector for every block with source references.
+
+I checked the model against the real design. Its ALU function matches `Design/alu.v` and all 14 mutants for every opcode and operand pair
+(iverilog). It reproduces the scoreboard fail counts in `results/mutants.txt` and `results/mutants_ext.txt` and the counted bins in
+`results/coverage_w8.txt`. The first 60 scoreboard checks of three real UVM runs (unmutated, A01, and A06 with the extension; Verilator
+5.052, on a copy that prints each check) match its timing, operands, results and carries line for line. Those comparisons are not scripted
+in this repository. UVM phasing, the factory, `random_seq` and WIDTH 16 are not modelled. `docs/diagrams/make_explorer_preview.py`
+regenerates the preview from the page.
+
 ## What is measured here
 
 Every figure below comes from the scripts in `scripts/` and is read from `results/`; none of them is typed by hand. Two status words are
