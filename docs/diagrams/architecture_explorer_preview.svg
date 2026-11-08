@@ -1,0 +1,224 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 660" width="1500" height="660" role="img" aria-label="UVM environment around the registered ALU: test, sequences, sequencer, driver, interface, DUT, monitor, scoreboard, coverage, config_db and the mutation results">
+<style>
+svg{--bg:#E9EDF1;--surface:#FFFFFF;--surface2:#F3F6F8;--ink:#121B24;--muted:#556574;--line:#C3CDD7;--grid:#D3DBE3;
+ --data:#1B5FC4;--fwd:#B86200;--ctl:#6E3FC4;--trap:#C42F38;--mem:#0F7F55;--ver:#6A7B8C;
+ --b0:#1B5FC4;--b1:#6E3FC4;--b2:#B86200;--b3:#0F7F55;--b4:#A0306F;--b5:#0E7C8C}
+@media (prefers-color-scheme: dark){svg{--bg:#0C1219;--surface:#131B24;--surface2:#18222D;--ink:#E1E8EF;--muted:#8D9BA9;--line:#2B3947;--grid:#1B2631;
+ --data:#5FA3FF;--fwd:#F0A63A;--ctl:#A986F5;--trap:#FF6B70;--mem:#3CCB8E;--ver:#8496A8;
+ --b0:#5FA3FF;--b1:#A986F5;--b2:#F0A63A;--b3:#3CCB8E;--b4:#F07AB8;--b5:#3CC6D6}}
+.bg{fill:var(--bg)} .dot{fill:var(--grid)} .band{fill:var(--surface2);opacity:.6}
+.hd{font:700 16px 'Arial Narrow','Roboto Condensed','Helvetica Neue',Arial,sans-serif;letter-spacing:.04em}
+.box{fill:var(--surface);stroke:var(--line);stroke-width:1.2} .ext .box{fill:var(--surface2);stroke-dasharray:4 3} .ver .box{stroke-dasharray:2 3}
+.nt{font:700 15px 'Arial Narrow','Roboto Condensed','Helvetica Neue',Arial,sans-serif;fill:var(--ink)}
+.ns{font:400 10.5px ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;fill:var(--muted)}
+.nl{font:400 10.5px -apple-system,'Segoe UI',Helvetica,Arial,sans-serif;fill:var(--muted)}
+.bar{fill:var(--surface2);stroke:var(--ink);stroke-opacity:.45;stroke-width:1.2}
+.bt{font:600 11px ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;fill:var(--muted);letter-spacing:.08em}
+.bnd{fill:none;stroke:var(--line);stroke-dasharray:6 5;stroke-width:1.2}
+.cap{font:600 11px ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;fill:var(--muted);letter-spacing:.06em}
+.lg{font:400 12px -apple-system,'Segoe UI',Helvetica,Arial,sans-serif;fill:var(--muted)}
+.ln{fill:none;stroke-width:1.6}
+.t-data{stroke:var(--data)} .t-fwd{stroke:var(--fwd);stroke-width:2} .t-ctl{stroke:var(--ctl);stroke-dasharray:5 4}
+.t-trap{stroke:var(--trap);stroke-dasharray:7 3} .t-mem{stroke:var(--mem);stroke-width:2} .t-ver{stroke:var(--ver);stroke-dasharray:2 4}
+.p-data{fill:var(--data)} .p-fwd{fill:var(--fwd)} .p-ctl{fill:var(--ctl)} .p-trap{fill:var(--trap)} .p-mem{fill:var(--mem)} .p-ver{fill:var(--ver)}
+.pulse{fill:var(--data);animation:clk 1.7s steps(1,end) infinite}
+@keyframes clk{0%{opacity:0}88%{opacity:.55}100%{opacity:0}}
+@media (prefers-reduced-motion: reduce){.pulse{animation:none;opacity:0}}
+</style>
+<defs><pattern id="g" width="16" height="16" patternUnits="userSpaceOnUse"><circle class="dot" cx="1" cy="1" r=".9"/></pattern>
+<marker id="a-data" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="p-data"/></marker>
+<marker id="a-ctl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="p-ctl"/></marker>
+<marker id="a-ver" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="p-ver"/></marker>
+</defs>
+<rect class="bg" width="1500" height="660"/><rect width="1500" height="620" fill="url(#g)"/>
+<rect class="band" x="10" y="12" width="330" height="570" rx="4"/>
+<rect x="10" y="12" width="330" height="4" rx="2" fill="var(--b0)"/>
+<text class="hd" x="20" y="40" fill="var(--b0)">Stimulus: test, sequences, agent</text>
+<rect class="band" x="350" y="12" width="330" height="570" rx="4"/>
+<rect x="350" y="12" width="330" height="4" rx="2" fill="var(--b1)"/>
+<text class="hd" x="360" y="40" fill="var(--b1)">alu_tb_top and the DUT</text>
+<rect class="band" x="690" y="12" width="400" height="570" rx="4"/>
+<rect x="690" y="12" width="400" height="4" rx="2" fill="var(--b3)"/>
+<text class="hd" x="700" y="40" fill="var(--b3)">Observation: monitor, scoreboard, coverage</text>
+<rect class="band" x="1100" y="12" width="390" height="570" rx="4"/>
+<rect x="1100" y="12" width="390" height="4" rx="2" fill="var(--b2)"/>
+<text class="hd" x="1110" y="40" fill="var(--b2)">Configuration and measured results</text>
+<path class="ln t-ctl" d="M175 200 L175 225" marker-end="url(#a-ctl)"><title>seq.start(e.a.seqr)</title></path>
+<path class="ln t-data" d="M175 345 L175 370" marker-end="url(#a-data)"><title>start_item / finish_item(tr)</title></path>
+<path class="ln t-data" d="M175 425 L175 450" marker-end="url(#a-data)"><title>seq_item_export → seq_item_port</title></path>
+<path class="ln t-data" d="M320 500 L345 500 L345 285 L370 285" marker-end="url(#a-data)"><title>vif.opcode, num1, num2 &lt;= tr</title></path>
+<path class="ln t-data" d="M470 340 L470 370" marker-end="url(#a-data)"><title>clk, rst_n, opcode, num1, num2</title></path>
+<path class="ln t-data" d="M570 370 L570 340" marker-end="url(#a-data)"><title>result, carry_out</title></path>
+<path class="ln t-ctl" d="M515 200 L515 230" marker-end="url(#a-ctl)"><title>clk (20 ns), rst_n</title></path>
+<path class="ln t-data" d="M660 310 L685 310 L685 480 L710 480" marker-end="url(#a-data)"><title>opcode, num1, num2, result, carry_out, rst_n at posedge</title></path>
+<path class="ln t-data" d="M1060 420 L1085 420 L1085 160 L1070 160" marker-end="url(#a-data)"><title>ap.write(tr) → recv</title></path>
+<path class="ln t-data" d="M890 420 L890 385" marker-end="url(#a-data)"><title>ap.write(tr) → analysis_export</title></path>
+<path class="ln t-ctl" d="M515 90 L515 82 L1300 82 L1300 90" marker-end="url(#a-ctl)"><title>config_db set(null, &quot;*&quot;, &quot;vif&quot;, vif)</title></path>
+<path class="ln t-ctl" d="M1470 200 L1484 200 L1484 592 L100 592 L100 550" marker-end="url(#a-ctl)"><title>config_db get vif</title></path>
+<path class="ln t-ctl" d="M1120 215 L1096 215 L1096 500 L1070 500" marker-end="url(#a-ctl)"><title>config_db get vif</title></path>
+<path class="ln t-ctl" d="M1070 300 L1092 300 L1092 150 L1120 150" marker-end="url(#a-ctl)"><title>config_db set cov_h</title></path>
+<path class="ln t-ctl" d="M1250 90 L1250 64 L22 64 L22 290 L30 290" marker-end="url(#a-ctl)"><title>cov_h → random_seq</title></path>
+<path class="ln t-ctl" d="M800 90 L800 76 L175 76 L175 90" marker-end="url(#a-ctl)"><title>pass_count, fail_count</title></path>
+<path class="ln t-ctl" d="M710 330 L702 330 L702 70 L140 70 L140 90" marker-end="url(#a-ctl)"><title>cg.get_coverage()</title></path>
+<path class="ln t-ver" d="M1070 225 L1110 225 L1110 330 L1120 330" marker-end="url(#a-ver)"><title>a mismatch kills a mutant</title></path>
+<path class="ln t-ver" d="M1070 380 L1112 380 L1112 470 L1120 470" marker-end="url(#a-ver)"><title>bins hit</title></path>
+<path class="ln t-ver" d="M1470 370 L1478 370 L1478 604 L520 604 L520 550" marker-end="url(#a-ver)"><title>one-line patch of alu.v</title></path>
+<circle r="3.2" class="p-ctl"><animateMotion dur="1.20s" begin="-0.00s" repeatCount="indefinite" path="M175 200 L175 225"/></circle>
+<circle r="3.2" class="p-data"><animateMotion dur="1.20s" begin="-0.00s" repeatCount="indefinite" path="M175 345 L175 370"/></circle>
+<circle r="3.2" class="p-data"><animateMotion dur="1.20s" begin="-0.00s" repeatCount="indefinite" path="M175 425 L175 450"/></circle>
+<circle r="3.2" class="p-data"><animateMotion dur="3.79s" begin="-0.00s" repeatCount="indefinite" path="M320 500 L345 500 L345 285 L370 285"/></circle>
+<circle r="3.2" class="p-data"><animateMotion dur="3.79s" begin="-1.89s" repeatCount="indefinite" path="M320 500 L345 500 L345 285 L370 285"/></circle>
+<circle r="3.2" class="p-data"><animateMotion dur="1.20s" begin="-0.00s" repeatCount="indefinite" path="M470 340 L470 370"/></circle>
+<circle r="3.2" class="p-data"><animateMotion dur="1.20s" begin="-0.00s" repeatCount="indefinite" path="M570 370 L570 340"/></circle>
+<circle r="3.2" class="p-ctl"><animateMotion dur="1.20s" begin="-0.00s" repeatCount="indefinite" path="M515 200 L515 230"/></circle>
+<circle r="3.2" class="p-data"><animateMotion dur="3.14s" begin="-0.00s" repeatCount="indefinite" path="M660 310 L685 310 L685 480 L710 480"/></circle>
+<circle r="3.2" class="p-data"><animateMotion dur="4.29s" begin="-0.00s" repeatCount="indefinite" path="M1060 420 L1085 420 L1085 160 L1070 160"/></circle>
+<circle r="3.2" class="p-data"><animateMotion dur="4.29s" begin="-2.14s" repeatCount="indefinite" path="M1060 420 L1085 420 L1085 160 L1070 160"/></circle>
+<circle r="3.2" class="p-data"><animateMotion dur="1.20s" begin="-0.00s" repeatCount="indefinite" path="M890 420 L890 385"/></circle>
+<circle r="3.2" class="p-ctl"><animateMotion dur="11.44s" begin="-0.00s" repeatCount="indefinite" path="M515 90 L515 82 L1300 82 L1300 90"/></circle>
+<circle r="3.2" class="p-ctl"><animateMotion dur="11.44s" begin="-2.29s" repeatCount="indefinite" path="M515 90 L515 82 L1300 82 L1300 90"/></circle>
+<circle r="3.2" class="p-ctl"><animateMotion dur="11.44s" begin="-4.58s" repeatCount="indefinite" path="M515 90 L515 82 L1300 82 L1300 90"/></circle>
+<circle r="3.2" class="p-ctl"><animateMotion dur="11.44s" begin="-6.87s" repeatCount="indefinite" path="M515 90 L515 82 L1300 82 L1300 90"/></circle>
+<circle r="3.2" class="p-ctl"><animateMotion dur="11.44s" begin="-9.15s" repeatCount="indefinite" path="M515 90 L515 82 L1300 82 L1300 90"/></circle>
+<circle r="3.2" class="p-ctl"><animateMotion dur="26.17s" begin="-0.00s" repeatCount="indefinite" path="M1470 200 L1484 200 L1484 592 L100 592 L100 550"/></circle>
+<circle r="3.2" class="p-ctl"><animateMotion dur="26.17s" begin="-2.38s" repeatCount="indefinite" path="M1470 200 L1484 200 L1484 592 L100 592 L100 550"/></circle>
+<circle r="3.2" class="p-ctl"><animateMotion dur="26.17s" begin="-4.76s" repeatCount="indefinite" path="M1470 200 L1484 200 L1484 592 L100 592 L100 550"/></circle>
+<circle r="3.2" class="p-ctl"><animateMotion dur="26.17s" begin="-7.14s" repeatCount="indefinite" path="M1470 200 L1484 200 L1484 592 L100 592 L100 550"/></circle>
+<circle r="3.2" class="p-ctl"><animateMotion dur="26.17s" begin="-9.52s" repeatCount="indefinite" path="M1470 200 L1484 200 L1484 592 L100 592 L100 550"/></circle>
+<circle r="3.2" class="p-ctl"><animateMotion dur="26.17s" begin="-11.90s" repeatCount="indefinite" path="M1470 200 L1484 200 L1484 592 L100 592 L100 550"/></circle>
+<circle r="3.2" class="p-ctl"><animateMotion dur="26.17s" begin="-14.28s" repeatCount="indefinite" path="M1470 200 L1484 200 L1484 592 L100 592 L100 550"/></circle>
+<circle r="3.2" class="p-ctl"><animateMotion dur="26.17s" begin="-16.65s" repeatCount="indefinite" path="M1470 200 L1484 200 L1484 592 L100 592 L100 550"/></circle>
+<circle r="3.2" class="p-ctl"><animateMotion dur="26.17s" begin="-19.03s" repeatCount="indefinite" path="M1470 200 L1484 200 L1484 592 L100 592 L100 550"/></circle>
+<circle r="3.2" class="p-ctl"><animateMotion dur="26.17s" begin="-21.41s" repeatCount="indefinite" path="M1470 200 L1484 200 L1484 592 L100 592 L100 550"/></circle>
+<circle r="3.2" class="p-ctl"><animateMotion dur="26.17s" begin="-23.79s" repeatCount="indefinite" path="M1470 200 L1484 200 L1484 592 L100 592 L100 550"/></circle>
+<circle r="3.2" class="p-ctl"><animateMotion dur="4.79s" begin="-0.00s" repeatCount="indefinite" path="M1120 215 L1096 215 L1096 500 L1070 500"/></circle>
+<circle r="3.2" class="p-ctl"><animateMotion dur="4.79s" begin="-2.39s" repeatCount="indefinite" path="M1120 215 L1096 215 L1096 500 L1070 500"/></circle>
+<circle r="3.2" class="p-ctl"><animateMotion dur="2.86s" begin="-0.00s" repeatCount="indefinite" path="M1070 300 L1092 300 L1092 150 L1120 150"/></circle>
+<circle r="3.2" class="p-ctl"><animateMotion dur="21.26s" begin="-0.00s" repeatCount="indefinite" path="M1250 90 L1250 64 L22 64 L22 290 L30 290"/></circle>
+<circle r="3.2" class="p-ctl"><animateMotion dur="21.26s" begin="-2.36s" repeatCount="indefinite" path="M1250 90 L1250 64 L22 64 L22 290 L30 290"/></circle>
+<circle r="3.2" class="p-ctl"><animateMotion dur="21.26s" begin="-4.72s" repeatCount="indefinite" path="M1250 90 L1250 64 L22 64 L22 290 L30 290"/></circle>
+<circle r="3.2" class="p-ctl"><animateMotion dur="21.26s" begin="-7.09s" repeatCount="indefinite" path="M1250 90 L1250 64 L22 64 L22 290 L30 290"/></circle>
+<circle r="3.2" class="p-ctl"><animateMotion dur="21.26s" begin="-9.45s" repeatCount="indefinite" path="M1250 90 L1250 64 L22 64 L22 290 L30 290"/></circle>
+<circle r="3.2" class="p-ctl"><animateMotion dur="21.26s" begin="-11.81s" repeatCount="indefinite" path="M1250 90 L1250 64 L22 64 L22 290 L30 290"/></circle>
+<circle r="3.2" class="p-ctl"><animateMotion dur="21.26s" begin="-14.17s" repeatCount="indefinite" path="M1250 90 L1250 64 L22 64 L22 290 L30 290"/></circle>
+<circle r="3.2" class="p-ctl"><animateMotion dur="21.26s" begin="-16.53s" repeatCount="indefinite" path="M1250 90 L1250 64 L22 64 L22 290 L30 290"/></circle>
+<circle r="3.2" class="p-ctl"><animateMotion dur="21.26s" begin="-18.90s" repeatCount="indefinite" path="M1250 90 L1250 64 L22 64 L22 290 L30 290"/></circle>
+<circle r="3.2" class="p-ctl"><animateMotion dur="9.33s" begin="-0.00s" repeatCount="indefinite" path="M800 90 L800 76 L175 76 L175 90"/></circle>
+<circle r="3.2" class="p-ctl"><animateMotion dur="9.33s" begin="-2.33s" repeatCount="indefinite" path="M800 90 L800 76 L175 76 L175 90"/></circle>
+<circle r="3.2" class="p-ctl"><animateMotion dur="9.33s" begin="-4.66s" repeatCount="indefinite" path="M800 90 L800 76 L175 76 L175 90"/></circle>
+<circle r="3.2" class="p-ctl"><animateMotion dur="9.33s" begin="-7.00s" repeatCount="indefinite" path="M800 90 L800 76 L175 76 L175 90"/></circle>
+<circle r="3.2" class="p-ctl"><animateMotion dur="12.14s" begin="-0.00s" repeatCount="indefinite" path="M710 330 L702 330 L702 70 L140 70 L140 90"/></circle>
+<circle r="3.2" class="p-ctl"><animateMotion dur="12.14s" begin="-2.43s" repeatCount="indefinite" path="M710 330 L702 330 L702 70 L140 70 L140 90"/></circle>
+<circle r="3.2" class="p-ctl"><animateMotion dur="12.14s" begin="-4.86s" repeatCount="indefinite" path="M710 330 L702 330 L702 70 L140 70 L140 90"/></circle>
+<circle r="3.2" class="p-ctl"><animateMotion dur="12.14s" begin="-7.29s" repeatCount="indefinite" path="M710 330 L702 330 L702 70 L140 70 L140 90"/></circle>
+<circle r="3.2" class="p-ctl"><animateMotion dur="12.14s" begin="-9.71s" repeatCount="indefinite" path="M710 330 L702 330 L702 70 L140 70 L140 90"/></circle>
+<circle r="3.2" class="p-ver"><animateMotion dur="2.21s" begin="-0.00s" repeatCount="indefinite" path="M1070 225 L1110 225 L1110 330 L1120 330"/></circle>
+<circle r="3.2" class="p-ver"><animateMotion dur="2.00s" begin="-0.00s" repeatCount="indefinite" path="M1070 380 L1112 380 L1112 470 L1120 470"/></circle>
+<circle r="3.2" class="p-ver"><animateMotion dur="17.91s" begin="-0.00s" repeatCount="indefinite" path="M1470 370 L1478 370 L1478 604 L520 604 L520 550"/></circle>
+<circle r="3.2" class="p-ver"><animateMotion dur="17.91s" begin="-2.56s" repeatCount="indefinite" path="M1470 370 L1478 370 L1478 604 L520 604 L520 550"/></circle>
+<circle r="3.2" class="p-ver"><animateMotion dur="17.91s" begin="-5.12s" repeatCount="indefinite" path="M1470 370 L1478 370 L1478 604 L520 604 L520 550"/></circle>
+<circle r="3.2" class="p-ver"><animateMotion dur="17.91s" begin="-7.68s" repeatCount="indefinite" path="M1470 370 L1478 370 L1478 604 L520 604 L520 550"/></circle>
+<circle r="3.2" class="p-ver"><animateMotion dur="17.91s" begin="-10.24s" repeatCount="indefinite" path="M1470 370 L1478 370 L1478 604 L520 604 L520 550"/></circle>
+<circle r="3.2" class="p-ver"><animateMotion dur="17.91s" begin="-12.80s" repeatCount="indefinite" path="M1470 370 L1478 370 L1478 604 L520 604 L520 550"/></circle>
+<circle r="3.2" class="p-ver"><animateMotion dur="17.91s" begin="-15.36s" repeatCount="indefinite" path="M1470 370 L1478 370 L1478 604 L520 604 L520 550"/></circle>
+<g class="n"><rect class="box" x="30" y="90" width="290" height="110" rx="5"/>
+<text class="nt" x="40" y="109">test</text>
+<text class="ns" x="40" y="124">uvm_test · run_phase</text>
+<text class="nl" x="40" y="138">raise_objection · start sequences</text>
+<text class="nl" x="40" y="152">drain 2 posedges + negedge</text>
+<text class="nl" x="40" y="166">check pass / fail / coverage</text>
+</g>
+<g class="n"><rect class="box" x="30" y="225" width="290" height="120" rx="5"/>
+<text class="nt" x="40" y="244">Sequences</text>
+<text class="ns" x="40" y="259">uvm_sequence#(transaction)</text>
+<text class="nl" x="40" y="273">corner_case_seq: 25 directed items</text>
+<text class="nl" x="40" y="287">exhaustive_seq: 5 × 2^W × 2^W items</text>
+<text class="nl" x="40" y="301">random_seq: &lt;= 20000, coverage-driven</text>
+</g>
+<g class="n"><rect class="box" x="30" y="370" width="290" height="55" rx="5"/>
+<text class="nt" x="40" y="389">Sequencer</text>
+<text class="ns" x="40" y="404">uvm_sequencer#(transaction) seqr</text>
+<text class="nl" x="40" y="418">seq_item_export</text>
+</g>
+<g class="n"><rect class="box" x="30" y="450" width="290" height="100" rx="5"/>
+<text class="nt" x="40" y="469">driver d</text>
+<text class="ns" x="40" y="484">uvm_driver#(transaction)</text>
+<text class="nl" x="40" y="498">get_next_item → vif.opcode/num1/num2 &lt;=</text>
+<text class="nl" x="40" y="512">item_done · @(posedge vif.clk)</text>
+</g>
+<g class="n"><rect class="box" x="370" y="90" width="290" height="110" rx="5"/>
+<text class="nt" x="380" y="109">alu_tb_top</text>
+<text class="ns" x="380" y="124">module · testbench.sv</text>
+<text class="nl" x="380" y="138">clk: toggles every 10 ns (20 ns period)</text>
+<text class="nl" x="380" y="152">rst_n low for 20 ns</text>
+<text class="nl" x="380" y="166">sets vif · run_test(&quot;test&quot;)</text>
+</g>
+<g class="n"><rect class="box" x="370" y="230" width="290" height="110" rx="5"/>
+<text class="nt" x="380" y="249">alu_if vif</text>
+<text class="ns" x="380" y="264">interface · the only DUT-facing wires</text>
+<text class="nl" x="380" y="278">clk · rst_n · opcode[2:0]</text>
+<text class="nl" x="380" y="292">num1 · num2 · result · carry_out</text>
+<text class="nl" x="380" y="306">WIDTH from alu_pkg</text>
+</g>
+<g class="n"><rect class="box" x="370" y="370" width="290" height="180" rx="5"/>
+<text class="nt" x="380" y="389">alu (DUT)</text>
+<text class="ns" x="380" y="404">Design/alu.v · registered, 1-cycle latency</text>
+<text class="nl" x="380" y="418">ADD / SUB share one adder:</text>
+<text class="nl" x="380" y="432">num2 inverted and carry-in = 1 for SUB</text>
+<text class="nl" x="380" y="446">AND OR XOR · reserved 5..7 → 0</text>
+<text class="nl" x="380" y="460">result, carry_out: async-reset flops</text>
+</g>
+<g class="n"><rect class="box" x="710" y="90" width="360" height="140" rx="5"/>
+<text class="nt" x="720" y="109">scoreboard s</text>
+<text class="ns" x="720" y="124">uvm_analysis_imp recv · write()</text>
+<text class="nl" x="720" y="138">independent reference model:</text>
+<text class="nl" x="720" y="152">ADD: {carry,res} = a + b</text>
+<text class="nl" x="720" y="166">SUB: res = a - b, carry = (a &gt;= b)</text>
+<text class="nl" x="720" y="180">AND OR XOR: carry 0 · reserved: 0, 0</text>
+<text class="nl" x="720" y="194">pass_count / fail_count · UVM_ERROR</text>
+</g>
+<g class="n"><rect class="box" x="710" y="255" width="360" height="130" rx="5"/>
+<text class="nt" x="720" y="274">coverage cov</text>
+<text class="ns" x="720" y="289">uvm_subscriber#(transaction) · covergroup cg</text>
+<text class="nl" x="720" y="303">op_cp 8 · num1_cp 4 · num2_cp 4 · carry_cp 2</text>
+<text class="nl" x="720" y="317">op_x_operands (80 counted) · op_x_carry (4 counted)</text>
+<text class="nl" x="720" y="331">bins: zero / low / high / max, reserved[5..7]</text>
+</g>
+<g class="n"><rect class="box" x="710" y="420" width="360" height="140" rx="5"/>
+<text class="nt" x="720" y="439">monitor m</text>
+<text class="ns" x="720" y="454">uvm_monitor · uvm_analysis_port ap</text>
+<text class="nl" x="720" y="468">pairs each result with the operands sampled</text>
+<text class="nl" x="720" y="482">one posedge earlier (have_prev)</text>
+<text class="nl" x="720" y="496">ignores edges while rst_n is low</text>
+<text class="nl" x="720" y="510">flags X/Z outputs · ap.write(tr)</text>
+</g>
+<g class="n"><rect class="box" x="1120" y="90" width="350" height="150" rx="5"/>
+<text class="nt" x="1130" y="109">uvm_config_db</text>
+<text class="ns" x="1130" y="124">virtual alu_if vif · coverage cov_h</text>
+<text class="nl" x="1130" y="138">vif: set in alu_tb_top for &quot;*&quot;</text>
+<text class="nl" x="1130" y="152">cov_h: set in env.build_phase for &quot;*&quot;</text>
+<text class="nl" x="1130" y="166">alu_config: is_active = UVM_ACTIVE</text>
+</g>
+<g class="n ext ver"><rect class="box" x="1120" y="270" width="350" height="140" rx="5"/>
+<text class="nt" x="1130" y="289">Mutation campaign</text>
+<text class="ns" x="1130" y="304">scripts/mutate_alu.py · A01..A14</text>
+<text class="nl" x="1130" y="318">each mutant = one-line edit of alu.v</text>
+<text class="nl" x="1130" y="332">run through the full W=8 exhaustive test</text>
+<text class="nl" x="1130" y="346">original env: 10 killed, 4 survive</text>
+<text class="nl" x="1130" y="360">with ext/uvm_ext.sv: 11 killed, 3 survive</text>
+</g>
+<g class="n ext ver"><rect class="box" x="1120" y="440" width="350" height="120" rx="5"/>
+<text class="nt" x="1130" y="459">Measured runs</text>
+<text class="ns" x="1130" y="474">results/uvm_runs.txt · coverage_w8.txt</text>
+<text class="nl" x="1130" y="488">W=8: 327,705 checked, 0 fail</text>
+<text class="nl" x="1130" y="502">coverage: 102 / 102 counted bins</text>
+<text class="nl" x="1130" y="516">W=16 (random_seq_vl): 20,025 checked, 0 fail</text>
+</g>
+<path class="ln t-data" d="M16 640 L42 640" marker-end="url(#a-data)"/>
+<text class="lg" x="50" y="644">Transaction / signal value</text>
+<path class="ln t-ctl" d="M231 640 L257 640" marker-end="url(#a-ctl)"/>
+<text class="lg" x="265" y="644">Control, config or phase call</text>
+<path class="ln t-ver" d="M466 640 L492 640" marker-end="url(#a-ver)"/>
+<text class="lg" x="500" y="644">Measured results (not simulated)</text>
+<text class="lg" x="1488" y="644" text-anchor="end">Open the interactive explorer to run scenarios through the design</text>
+</svg>
